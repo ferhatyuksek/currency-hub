@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doviz Takip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        
+        <div id="date">
+    <span id="date-icon">
+    <svg id="calender" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar2-week" viewBox="0 0 16 16">
+  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/>
+  <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+</svg>
+</span>
+<span id="date-text"></span>
+</div>
+  <h2 style="margin:0; font-size: 1.5rem; color: #4db8ff;">Döviz<span style="color:white">*Takip</span></h2>
+<div class="info">
+      <h3>USD/TRY</h3>
+    <div id="live-priceUSD">
+    </div>
+</div>
+
+<div class="info">
+      <h3>EUR/TRY</h3>
+    <div id="live-priceEUR">
+    </div>
+</div>    
+<div class="info">
+      <h3>GBP/TRY</h3>
+    <div id="live-priceGBP">
+    </div>
+</div>  
+
+<div class="info">
+      <h3>₿TC-BITCOIN</h3>
+    <div id="live-priceBTC">
+    </div>
+</div>  
+<div class="info">
+      <h3>GRAM ALTIN</h3>
+    <div id="live-priceGOLD">
+    </div>
+</div>  
+<div class="info">
+      <h3>GRAM GÜMÜŞ</h3>
+    <div id="live-priceSILVER">
+    </div>
+</div>  
+
+<div id="container-wrapper">
+        <input id="amount" type="number" placeholder="Miktar">
+        <div id="wrapper">
+        <select id="firstCurrencyOption">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="TRY">TRY</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="CHF">CHF</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+
+        </select>
+        <svg id="repeat" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+</svg>
+        <select  id="secondCurrencyOption">
+            <option value="TRY">TRY</option>
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="CHF">CHF</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+        </select>
+        <button id="calculate">Hesapla</button>
+        <input id="result" type="text" placeholder="Sonuç">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(background.jpg);
+  color: white;
+  overflow-x: hidden;
+}
+
+#container {
+  width: min(650px, 100%);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 35px;
+  padding: 15px;
+  padding-top: 55px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+h2 {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  font-size: 1.8rem !important;
+  margin: 0;
+}
+
+#date {
+  position: absolute;
+  top: 17px;
+  right: 45px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+#container > div:not(#container-wrapper, #date) {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-color: #ffffff;
+}
+
+#container > .info > h3 {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#live-priceUSD,
+#live-priceEUR,
+#live-priceGBP,
+#live-priceBTC,
+#live-priceGOLD,
+#live-priceSILVER {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+#container-wrapper {
+  grid-column: span 3;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 28px;
+  padding: 30px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+#container-wrapper::before {
+  content: "Döviz Çevirici";
+  align-self: flex-start;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+#amount {
+  width: 100%;
+  font-size: x-large;
+}
+
+#firstCurrencyOption,
+#secondCurrencyOption {
+  width: 40%;
+  display: inline-block;
+  font-size: large;
+  padding: 10px;
+}
+#firstCurrencyOption {
+  margin-left: 15px;
+}
+
+#repeat {
+  color: #4db8ff;
+  width: 35px !important;
+  height: 35px !important;
+  vertical-align: middle;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#repeat:hover {
+  transform: rotate(180deg);
+  flex-shrink: 0;
+}
+
+input,
+select {
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+}
+
+#calculate {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #4db8ff, #6a5cff);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+#calculate:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+#result {
+  font-size: 1.3rem;
+  color: #4db8ff;
+  font-weight: bold;
+  pointer-events: none;
+  border-radius: 5px solid red;
+  margin-top: 15px;
+  width: 100%;
+}
+
+option {
+  background: #1a1a2e;
+  color: white;
+}
+
+#container > .info > h3 {
+  margin-bottom: 8px;
+}
+
+/* --- MOBİL--- */
+
+@media screen and (max-width: 500px) {
+  #container {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+  }
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    position: fixed;
+  }
+
+  #container {
+    width: min(350px, 95%);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 35px;
+    padding: 1px;
+    padding-top: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  h2 {
+    left: 50%;
+    transform: translateX(-100%);
+    top: 20px;
+    font-size: 1.3rem;
+  }
+
+  #date {
+    left: 50%;
+    transform: translateX(-23%);
+    top: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+  #date-text {
+    width: 70px;
+  }
+  #container-wrapper {
+    padding: 15px;
+  }
+
+  #firstCurrencyOption,
+  #secondCurrencyOption {
+    width: 32%;
+    font-size: 0.8rem;
+  }
+
+  #container > .info:not(#container-wrapper, #date) {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 2px 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2px solid;
+    border-color: #ffffff;
+  }
+
+  #container > .info h3 {
+    font-size: 0.5rem;
+    color: #a2a0a0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  #live-priceUSD,
+  #live-priceEUR,
+  #live-priceGBP,
+  #live-priceBTC,
+  #live-priceGOLD,
+  #live-priceSILVER {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  #calculate {
+    width: 100%;
+    padding: 8px;
+    background: linear-gradient(135deg, #4db8ff, #6a5cff);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+  }
+
+  #result {
+    width: 100%;
+    font-size: 1.3rem;
+    color: #4db8ff;
+    font-weight: bold;
+    pointer-events: none;
+    border-radius: 2px solid;
+
+    margin-top: 15px;
+    padding: 8px;
+  }
+  #container > .info > h3 {
+    margin-bottom: 8px;
+  }
+}
