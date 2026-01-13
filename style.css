@@ -195,8 +195,10 @@ option {
   html,
   body {
     width: 100%;
-    overflow-x: hidden;
-    position: fixed;
+    background-image: url("background.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: scroll !important;
   }
 
   #container {
